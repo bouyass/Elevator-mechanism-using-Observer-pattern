@@ -43,7 +43,6 @@ public class FirstSensor extends Sensor {
 
 	@Override
 	public void attach(Observer obs) {
-		
 		this.observers.add(obs);
 	}
 }

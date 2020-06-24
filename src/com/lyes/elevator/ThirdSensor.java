@@ -25,8 +25,6 @@ public class ThirdSensor extends Sensor{
 		}finally {
 			Thread.currentThread().stop();
 		}
-		
-
 	}
 	@Override
 	public void notifyAllObservers() {
