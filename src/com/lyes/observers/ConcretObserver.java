@@ -15,11 +15,12 @@ public class ConcretObserver extends Observer{
 
 	@Override
 	public void update(int floorNumber) {
-		System.out.println("first sensor notification from "+ floorNumber);
+		System.out.println(floorNumber);
+		System.out.println("notification from "+ floorNumber);
 		this.cabine.setOldFloor(this.cabine.getFloor());
 		this.cabine.setFloor(floorNumber);
 		this.cabine.setFlow(this.cabine.getFloor()-this.cabine.getOldFloor());
-		this.cabine.toString();
+		System.out.println(this.cabine.toString());
 	}
 
 }

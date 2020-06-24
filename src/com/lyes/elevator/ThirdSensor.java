@@ -9,7 +9,7 @@ public class ThirdSensor extends Sensor{
 	
 	
 	public ThirdSensor() {
-		this.floorNumber = 2;
+		ThirdSensor.floorNumber = 2;
 		observers = new ArrayList<Observer>();
 	}
 	@Override
@@ -26,11 +26,13 @@ public class ThirdSensor extends Sensor{
 			Thread.currentThread().stop();
 		}
 	}
+	
+	
 	@Override
 	public void notifyAllObservers() {
-		System.out.println("Third sensor notif");
+		System.out.println("tird "+ThirdSensor.floorNumber);
 		for(Observer obs:observers) {
-			obs.update(this.floorNumber);
+			obs.update(ThirdSensor.floorNumber);
 		}
 		
 	}

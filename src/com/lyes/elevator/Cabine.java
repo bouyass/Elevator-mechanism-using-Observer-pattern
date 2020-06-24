@@ -1,5 +1,7 @@
 package com.lyes.elevator;
 
+import java.util.List;
+
 public class Cabine {
 
 	private enum flows{
@@ -24,16 +26,13 @@ public class Cabine {
 		this.oldFloor = oldFloor;
 	}
 
-	public void move() {
+	public void move(List<Sensor> sensors) {
 		
-		Thread t1 = new Thread(new FirstSensor());
-		Thread t2 = new Thread(new SecondSensor());
-		Thread t3 = new Thread(new ThirdSensor());
 		
-		t1.start();
-		t2.start();
-		t3.start();
-
+		for(Sensor s:sensors) {
+			Thread t = new Thread(s);
+			t.start();
+		}
 	}
 
 	public int getFloor() {

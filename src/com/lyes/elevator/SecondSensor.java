@@ -7,17 +7,16 @@ import com.lyes.observers.Observer;
 public class SecondSensor extends Sensor{
 	
 	public SecondSensor() {
-		this.floorNumber = 1;
+		SecondSensor.floorNumber = 1;
 		observers = new ArrayList<Observer>();
+		
 	}
 	
 	@Override
 	public void run() {
-		
+		System.out.println("second "+SecondSensor.floorNumber);
 		try {
-			
-			
-			
+
 			Thread.sleep(3000);
 			
 			notifyAllObservers();
@@ -31,9 +30,9 @@ public class SecondSensor extends Sensor{
 
 	@Override
 	public void notifyAllObservers() {
-		System.out.println("Second sensor notif");
+		
 		for(Observer obs:observers) {
-			obs.update(this.floorNumber);
+			obs.update(SecondSensor.floorNumber);
 		}
 		
 	}

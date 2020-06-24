@@ -28,7 +28,7 @@ public class ElevatorTest {
 		Observer obs = new ConcretObserver(sensors);
 		obs.setCabine(cabine);
 		
-		cabine.move();
+		cabine.move(sensors);
 		
 		
 

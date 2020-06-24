@@ -9,21 +9,21 @@ public class FirstSensor extends Sensor {
 	
 	
 	public FirstSensor() {
-		this.floorNumber = 0;
+		FirstSensor.floorNumber = 0;
 		observers = new ArrayList<Observer>();
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Override
 	public void run() {
 		try {
 			
 			Thread.sleep(1000);
 			
-			
 			notifyAllObservers();
 					
 			
-		} catch (InterruptedException e) {
+		}catch (InterruptedException e) {
 			e.printStackTrace();
 		}finally {
 			Thread.currentThread().stop();
@@ -33,11 +33,9 @@ public class FirstSensor extends Sensor {
 
 	@Override
 	public void notifyAllObservers() {
-		System.out.println("first sensor notification");
-		System.out.println("taille "+ observers.size());
+		System.out.println("tird "+FirstSensor.floorNumber);
 		for(Observer obs:observers) {
-			System.out.println("obs notified");
-			obs.update(this.floorNumber);
+			obs.update(FirstSensor.floorNumber);
 		}
 	}
 
