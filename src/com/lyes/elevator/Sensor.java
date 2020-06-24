@@ -1,10 +1,15 @@
 package com.lyes.elevator;
 
-public class Sensor implements Runnable{
+import java.util.List;
 
-	@Override
-	public void run() {
-		
-	}
+import com.lyes.observers.Observer;
+
+public abstract class Sensor implements Runnable{
+	
+	protected static int floorNumber;
+	protected List<Observer> observers;
+	
+	public abstract void attach(Observer obs);
+	public abstract void notifyAllObservers();
 
 }
